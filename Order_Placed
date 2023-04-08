@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Ecommerce Store - Order Placed</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>My Ecommerce Store</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Cart</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Order Placed</h2>
+      <p>Thank you for your order!</p>
+    </main>
+    <footer>
+      <p>&copy; 2023 My Ecommerce Store</p>
+    </footer>
+  </body>
+</html>

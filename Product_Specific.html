@@ -50,7 +50,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       button.addEventListener('click', function(event) {
         console.log('Add to Cart');
         var product = this.parentNode;
-        var productId = product.querySelector('.product-specific').getAttribute('data-product-id');
+       
         var productName = product.querySelector('.product-specific h3').innerText;
         var productPrice = product.querySelector('.product-specific p').innerText;
         console.log(productId);

@@ -27,24 +27,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </nav>
     </header>
-    <main>
-      <h2>Product 1</h2>
-      <div class="product-specific" data-product-id="5544">
-        <img src="product1.jpg" alt="Product 2">
-        <h3>Ninja 921</h3>
-        <p>$19.99</p>
-       <button onclick="window.location.href='/learning/Checkout.html'">Add to Cart</button>
-      </div>
-      <h2>Product 2</h2>
-      <div class="product-specific" data-product-id="3388">
-        <img src="product1.jpg" alt="Product 2">
-        <h3>R15 Version 2.0</h3>
-        <p>$12.18</p>
-       <button onclick="window.location.href='/learning/Checkout.html'">Add to Cart</button>
-      </div>
-    </main>
-    <script>   
-      document.querySelectorAll("body > main > button").forEach(function(button) {
+   <main>
+  <h2>Product 1</h2>
+  <div class="product-specific" data-product-id="5544">
+    <img src="product1.jpg" alt="Product 2">
+    <h3>Ninja 921</h3>
+    <p>$19.99</p>
+    <button onclick="window.location.href='/learning/Checkout.html'">Add to Cart</button>
+  </div>
+  <h2>Product 2</h2>
+  <div class="product-specific" data-product-id="3388">
+    <img src="product1.jpg" alt="Product 2">
+    <h3>R15 Version 2.0</h3>
+    <p>$12.18</p>
+    <button onclick="window.location.href='/learning/Checkout.html'">Add to Cart</button>
+  </div>
+</main>
+
+<script>   
+  document.querySelectorAll("body > main > button").forEach(function(button) {
     button.addEventListener('click', function(event) {
       var product = this.parentNode;
       var productId = product.querySelector('.product-specific').getAttribute('data-product-id');
@@ -55,7 +56,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       console.log('Product Price:', productPrice);
     });
   });
-    </script>
+</script>
     <footer>
       <p>&copy; 2023 My Ecommerce Store</p>
     </footer>

@@ -47,7 +47,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>   
   document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll("body > main > div > button").forEach(function(button) {
-      button.addEventListener('click', function() {
+      button.addEventListener('click', function(event) {
         console.log('Add to Cart');
          var product = this.parentNode;
       

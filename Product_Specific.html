@@ -46,27 +46,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>   
   document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll("body > main > div > button").forEach(function(button) {
-      button.addEventListener('click', function(event) {
-        console.log('Add to Cart');
-         var product = this.parentNode;
+  document.querySelectorAll("body > main > div > button").forEach(function(button) {
+    button.addEventListener('click', function(event) {
+      console.log('Add to Cart');
+      var product = this.parentNode;
       
-        var productName = product.querySelector('.product-specific h3').innerText;
-        var productPrice = product.querySelector('.product-specific p').innerText;
+      var productName = product.querySelector('.product-specific h3').innerText;
+      var productPrice = product.querySelector('.product-specific p').innerText;
        
-        console.log('Product Name:', productName);
-        console.log('Product Price:', productPrice);
-        
-       var digitalData = digitalData || {};
-digitalData = {
-  'event': 'Add to Cart',
-  'productName': productName,
-  'productPrice': productPrice
-};
-        
-      });
+      console.log('Product Name:', productName);
+      console.log('Product Price:', productPrice);
+      
+      // Update digitalData object with dynamic values
+      window.digitalData = window.digitalData || {};
+      window.digitalData = {
+        'event': 'Add to Cart',
+        'productName': productName,
+        'productPrice': productPrice
+      };
     });
   });
+});
+
 </script>
 
     <footer>

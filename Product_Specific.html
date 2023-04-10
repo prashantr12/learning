@@ -45,16 +45,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </main>
     <script>   
       document.querySelectorAll("body > main > button").forEach(function(button) {
-        button.addEventListener('click', function(event) {
-          var product = this.parentNode;
-          var productId = product-specific.data-product-id;
-          var productName = product-specific.querySelector('h3').innerText;
-          var productPrice = product-specific.querySelector('p').innerText;
-          console.log('Product ID:', productId);
-          console.log('Product Name:', productName);
-          console.log('Product Price:', productPrice);
-        });
-      });
+    button.addEventListener('click', function(event) {
+      var product = this.parentNode;
+      var productId = product.querySelector('.product-specific').getAttribute('data-product-id');
+      var productName = product.querySelector('.product-specific h3').innerText;
+      var productPrice = product.querySelector('.product-specific p').innerText;
+      console.log('Product ID:', productId);
+      console.log('Product Name:', productName);
+      console.log('Product Price:', productPrice);
+    });
+  });
     </script>
     <footer>
       <p>&copy; 2023 My Ecommerce Store</p>

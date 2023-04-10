@@ -45,7 +45,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </main>
 
 <script>   
-  document.querySelectorAll("body > main > button").forEach(function(button) {
+  document.querySelectorAll("body > main > div > button").forEach(function(button) {
     button.addEventListener('click', function(event) {
       var product = this.parentNode;
       var productId = product.querySelector('.product-specific').getAttribute('data-product-id');

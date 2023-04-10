@@ -57,12 +57,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         console.log('Product Name:', productName);
         console.log('Product Price:', productPrice);
         
-         window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push ({
-          'event': 'Add to Cart',
-          'productName': productName,
-          'productPrice': productPrice
-        });
+       var digitalData = digitalData || {};
+digitalData = {
+  'event': 'Add to Cart',
+  'productName': productName,
+  'productPrice': productPrice
+};
         
       });
     });

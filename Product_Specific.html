@@ -45,37 +45,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </main>
 
 <script>   
+  function stime() {
+    const now = new Date();
+    const transactionId = now.getFullYear().toString() + (now.getMonth() + 1).toString() + now.getDate().toString() + now.getHours().toString() + now.getMinutes().toString() + now.getSeconds().toString();
+    return transactionId;
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll("body > main > div > button").forEach(function(button) {
-    button.addEventListener('click', function(event) {
-      console.log('Add to Cart');
-      var product = this.parentNode;
+    document.querySelectorAll("body > main > div > button").forEach(function(button) {
+      button.addEventListener('click', function(event) {
+        console.log('Add to Cart');
+        var product = this.parentNode;
+
+        var productName = product.querySelector('.product-specific h3').innerText;
+        var productPrice = product.querySelector('.product-specific p').innerText;
       
-      var productName = product.querySelector('.product-specific h3').innerText;
-      var productPrice = product.querySelector('.product-specific p').innerText;
-   const productId = function stime() {
-const now = new Date();
-const transactionId = now.getFullYear().toString()+(now.getMonth()+1).toString()+now.getDate().toString()+now.getHours().toString()+now.getMinutes().toString()+now.getSeconds().toString();
-return transactionId;
-}
- 
-      alert('Product ID:'+ productId);
-      alert('Product Name:'+ productName);
-      alert('Product Price:'+ productPrice);
-      
-      // Update digitalData object with dynamic values
-      window.digitalData = window.digitalData || {};
-      window.digitalData = {
-        'event': 'Add to Cart',
-        'productName': productName,
-        'productPrice': productPrice,
-        'productId': productId,
-      };
+        const productId = stime();
+
+        alert('Product ID:' + productId);
+        alert('Product Name:' + productName);
+        alert('Product Price:' + productPrice);
+
+        // Update digitalData object with dynamic values
+        window.digitalData = window.digitalData || {};
+        window.digitalData = {
+          'event': 'Add to Cart',
+          'productName': productName,
+          'productPrice': productPrice,
+          'productId': productId,
+        };
+      });
     });
   });
-});
-
 </script>
+
 
     <footer>
       <p>&copy; 2023 My Ecommerce Store</p>

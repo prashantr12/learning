@@ -44,41 +44,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </main>
 
-<script>   
-  
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+document.querySelectorAll("body > main > div > button").forEach(function(button) {
+button.addEventListener('click', function(event) {
+console.log('Add to Cart');
+var product = this.parentNode;
 
-  document.addEventListener('DOMContentLoaded', function() {
-    function stime() {
-    const now = new Date();
-    const transactionId = now.getFullYear().toString() + (now.getMonth() + 1).toString() + now.getDate().toString() + now.getHours().toString() + now.getMinutes().toString() + now.getSeconds().toString();
-    return transactionId;
-  };
-    document.querySelectorAll("body > main > div > button").forEach(function(button) {
-      button.addEventListener('click', function(event) {
-        console.log('Add to Cart');
-        var product = this.parentNode;
+var productName = product.querySelector('.product-specific h3').innerText;
+var productPrice = product.querySelector('.product-specific p').innerText;
 
-        var productName = product.querySelector('.product-specific h3').innerText;
-        var productPrice = product.querySelector('.product-specific p').innerText;
-      
-        const productId = stime();
+console.log('Product Name:', productName);
+console.log('Product Price:', productPrice);
 
-        alert('Product ID:' + productId + <br> + 'Product Name:' + productName + <br> + 'Product Price:' + productPrice);
-      
+// Update digitalData object with dynamic values
+window.digitalData = window.digitalData || {};
+window.digitalData = {
+event': 'Add to Cart',
+productName': productName,
+productPrice': productPrice
+};
+});
+});
+});
 
-        // Update digitalData object with dynamic values
-        window.digitalData = window.digitalData || {};
-        window.digitalData = {
-          'event': 'Add to Cart',
-          'productName': productName,
-          'productPrice': productPrice,
-          'productId': productId,
-        };
-      });
-    });
-  });
 </script>
-
 
     <footer>
       <p>&copy; 2023 My Ecommerce Store</p>

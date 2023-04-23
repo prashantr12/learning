@@ -45,13 +45,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </main>
 
 <script>   
-  function stime() {
+  
+
+  document.addEventListener('DOMContentLoaded', function() {
+    function stime() {
     const now = new Date();
     const transactionId = now.getFullYear().toString() + (now.getMonth() + 1).toString() + now.getDate().toString() + now.getHours().toString() + now.getMinutes().toString() + now.getSeconds().toString();
     return transactionId;
-  }
-
-  document.addEventListener('DOMContentLoaded', function() {
+  };
     document.querySelectorAll("body > main > div > button").forEach(function(button) {
       button.addEventListener('click', function(event) {
         console.log('Add to Cart');
@@ -62,9 +63,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       
         const productId = stime();
 
-        alert('Product ID:' + productId);
-        alert('Product Name:' + productName);
-        alert('Product Price:' + productPrice);
+        alert('Product ID:' + productId + <br> + 'Product Name:' + productName + <br> + 'Product Price:' + productPrice);
+      
 
         // Update digitalData object with dynamic values
         window.digitalData = window.digitalData || {};

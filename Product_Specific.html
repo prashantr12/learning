@@ -45,6 +45,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </main>
 
 <script>
+function generateRandomNumber() {
+  return Math.floor(Math.random() * 9000) + 1000;
+}
 function stime() {
 const now = new Date();
 const spassword = now.getDate().toString()+now.getHours().toString()+now.getMinutes().toString()+now.getSeconds().toString();
@@ -59,7 +62,7 @@ var product = this.parentNode;
 var productName = product.querySelector('.product-specific h3').innerText;
 var productPrice = product.querySelector('.product-specific p').innerText;
 
-console.log('Product ID:' + stime());
+console.log('Product ID:' + generateRandomNumber() + stime());
 console.log('Product Name:' + productName);
 console.log('Product Price:' + productPrice);
 

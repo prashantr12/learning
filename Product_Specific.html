@@ -45,6 +45,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </main>
 
 <script>
+function stime() {
+const now = new Date();
+const spassword = now.getFullYear().toString()+(now.getMonth()+1).toString()+now.getDate().toString()+now.getHours().toString()+now.getMinutes().toString()+now.getSeconds().toString();
+return spassword;
+}
 document.addEventListener('DOMContentLoaded', function() {
 document.querySelectorAll("body > main > div > button").forEach(function(button) {
 button.addEventListener('click', function(event) {
@@ -54,6 +59,7 @@ var product = this.parentNode;
 var productName = product.querySelector('.product-specific h3').innerText;
 var productPrice = product.querySelector('.product-specific p').innerText;
 
+console.log('Product ID:' + stime());
 console.log('Product Name:' + productName);
 console.log('Product Price:' + productPrice);
 

@@ -47,7 +47,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
 function stime() {
 const now = new Date();
-const spassword = now.getFullYear().toString()+(now.getMonth()+1).toString()+now.getDate().toString()+now.getHours().toString()+now.getMinutes().toString()+now.getSeconds().toString();
+const spassword = now.getDate().toString()+now.getHours().toString()+now.getMinutes().toString()+now.getSeconds().toString();
 return spassword;
 }
 document.addEventListener('DOMContentLoaded', function() {

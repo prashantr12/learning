@@ -50,7 +50,9 @@ function generateRandomNumber() {
 }
 function stime() {
 const now = new Date();
-const spassword = now.getHours().toString()+now.getMinutes().toString();
+const hours = ('0' + now.getHours()).slice(-2); // Ensure 2-digit hours
+const minutes = ('0' + now.getMinutes()).slice(-2); // Ensure 2-digit minutes
+const spassword = hours + minutes;
 return spassword;
 }
 document.addEventListener('DOMContentLoaded', function() {

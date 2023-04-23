@@ -46,11 +46,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
 function generateRandomNumber() {
-  return Math.floor(Math.random() * 9000) + 1000;
+  return Math.floor(Math.random() * 90000) + 10000;
 }
 function stime() {
 const now = new Date();
-const spassword = now.getDate().toString()+now.getHours().toString()+now.getMinutes().toString()+now.getSeconds().toString();
+const spassword = now.getHours().toString()+now.getMinutes().toString();
 return spassword;
 }
 document.addEventListener('DOMContentLoaded', function() {
@@ -62,7 +62,7 @@ var product = this.parentNode;
 var productName = product.querySelector('.product-specific h3').innerText;
 var productPrice = product.querySelector('.product-specific p').innerText;
 
-console.log('Product ID:' + generateRandomNumber() + stime());
+console.log('Product ID:' + generateRandomNumber() +'-' stime());
 console.log('Product Name:' + productName);
 console.log('Product Price:' + productPrice);
 

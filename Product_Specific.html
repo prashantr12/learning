@@ -53,16 +53,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       
       var productName = product.querySelector('.product-specific h3').innerText;
       var productPrice = product.querySelector('.product-specific p').innerText;
-       
-      console.log('Product Name:', productName);
-      console.log('Product Price:', productPrice);
+   const productId = function stime() {
+const now = new Date();
+const transactionId = now.getFullYear().toString()+(now.getMonth()+1).toString()+now.getDate().toString()+now.getHours().toString()+now.getMinutes().toString()+now.getSeconds().toString();
+return transactionId;
+}
+ 
+      alert('Product Name:', productId);
+      alert('Product Name:', productName);
+      alert('Product Price:', productPrice);
       
       // Update digitalData object with dynamic values
       window.digitalData = window.digitalData || {};
       window.digitalData = {
         'event': 'Add to Cart',
         'productName': productName,
-        'productPrice': productPrice
+        'productPrice': productPrice,
+        'transactionId': productId,
       };
     });
   });
